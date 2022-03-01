@@ -10,6 +10,13 @@ curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 chmod go-r ~/.kube/config
 helm version
 ```
+Edit values.yaml
+```sh
+nano values.yaml
+      addresses:
+      # Replace with idle IP in the same subnet as the node IP.
+      - 192.168.1.3-192.168.1.4
+```
 Install metallb
 ```sh
 # Add the Helm repository:
