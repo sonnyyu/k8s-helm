@@ -20,7 +20,7 @@ helm search repo apache
 helm install my-apache bitnami/apache
 kubectl get service -o wide 
 kubectl get pods --all-namespaces  |grep my-apache
-wait few minutes
+#wait few minutes
 curl http://192.168.1.3
 helm list --all
 helm delete my-apache
