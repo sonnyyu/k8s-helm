@@ -1,4 +1,9 @@
 # k8s-helm
+Get Install Software
+```sh
+git clone https://github.com/sonnyyu/k8s-helm
+cd k8s-helm
+```
 Install Helm
 ```sh
 curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
