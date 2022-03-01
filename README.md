@@ -1,8 +1,34 @@
 # k8s-helm
+Install Helm
 ```sh
 curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 chmod go-r ~/.kube/config
 helm version
+```
+Install metallb
+```sh
+# crate namespace:
+$ kubectl create namespace metallb-system
+# Add the Helm repository:
+$ helm repo add bitnami https://charts.bitnami.com/bitnami
+# Update your local Helm chart repository cache:
+$ helm repo update
+# To install Helm chart:
+$ helm install metallb bitnami/metallb --namespace metallb-system -f values.yaml
+```
+Install nginx
+```sh
+# To install nginx
+helm install my-nginx bitnami/nginx
+# Get nginx pod
+kubectl get pods --all-namespaces |grep my-nginx
+# Get Service
+kubectl get service -o wide  --all-namespaces
+#test nginx
+curl http://192.168.1.3
+```
+Install app by helm
+```sh
 helm repo list
 helm repo add bitnami https://charts.bitnami.com/bitnami
 helm repo add default https://charts.helm.sh/stable
