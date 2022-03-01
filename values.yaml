@@ -1,0 +1,8 @@
+configInline: |
+    # https://metallb.universe.tf/configuration/#layer-2-configuration
+    address-pools:
+    - name: default
+      protocol: layer2
+      addresses:
+      # Replace with idle IP in the same subnet as the node IP.
+      - 192.168.1.3-192.168.1.4
