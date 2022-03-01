@@ -12,12 +12,12 @@ helm version
 ```
 Install metallb
 ```sh
-# crate namespace:
-$ kubectl create namespace metallb-system
 # Add the Helm repository:
 $ helm repo add bitnami https://charts.bitnami.com/bitnami
 # Update your local Helm chart repository cache:
 $ helm repo update
+# crate namespace:
+$ kubectl create namespace metallb-system
 # To install Helm chart:
 $ helm install metallb bitnami/metallb --namespace metallb-system -f values.yaml
 ```
